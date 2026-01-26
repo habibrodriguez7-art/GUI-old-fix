@@ -253,7 +253,6 @@ function Library:CreateWindow(config)
         ClipsDescendants = false,
         ZIndex = 3
     })
-    new("UICorner", {Parent = self._win, CornerRadius = UDim.new(0, 8)})
     
     -- Sidebar
     self._sidebar = new("Frame", {
@@ -288,7 +287,6 @@ function Library:CreateWindow(config)
         BorderSizePixel = 0,
         ZIndex = 6
     })
-    new("UICorner", {Parent = headerDragHandle, CornerRadius = UDim.new(1, 0)})
     
     -- Title
     new("TextLabel", {
@@ -323,7 +321,6 @@ function Library:CreateWindow(config)
         BorderSizePixel = 0,
         ZIndex = 6
     })
-    new("UICorner", {Parent = separator, CornerRadius = UDim.new(1, 0)})
     
     new("TextLabel", {
         Parent = scriptHeader,
@@ -355,7 +352,6 @@ function Library:CreateWindow(config)
         AutoButtonColor = false,
         ZIndex = 7
     })
-    new("UICorner", {Parent = btnMinHeader, CornerRadius = UDim.new(0, 8)})
     
     -- Navigation Container
     self._navContainer = new("ScrollingFrame", {
@@ -425,7 +421,6 @@ function Library:CreateWindow(config)
         AutoButtonColor = false,
         ZIndex = 100
     })
-    new("UICorner", {Parent = resizeHandle, CornerRadius = UDim.new(0, 6)})
     
     -- Minimize System
     local minimized = false
@@ -445,7 +440,6 @@ function Library:CreateWindow(config)
             ScaleType = Enum.ScaleType.Fit,
             ZIndex = 50
         })
-        new("UICorner", {Parent = icon, CornerRadius = UDim.new(0, 10)})
         
         local logoText = new("TextLabel", {
             Parent = icon,
@@ -588,7 +582,6 @@ function Library:CreatePage(name, title, imageId, order)
         LayoutOrder = order or 999,
         ZIndex = 6
     })
-    new("UICorner", {Parent = btn, CornerRadius = UDim.new(0, 6)})
     
     local indicator = new("Frame", {
         Parent = btn,
@@ -599,7 +592,6 @@ function Library:CreatePage(name, title, imageId, order)
         Visible = false,
         ZIndex = 7
     })
-    new("UICorner", {Parent = indicator, CornerRadius = UDim.new(1, 0)})
     
     new("ImageLabel", {
         Parent = btn,
@@ -693,7 +685,6 @@ function Library:CreateCategory(parent, title)
         AutomaticSize = Enum.AutomaticSize.Y,
         ZIndex = 6
     })
-    new("UICorner", {Parent = categoryFrame, CornerRadius = UDim.new(0, 6)})
     
     local header = new("TextButton", {
         Parent = categoryFrame,
@@ -779,7 +770,6 @@ function Library:CreateToggle(parent, label, configPath, callback, disableSave)
         BorderSizePixel = 0,
         ZIndex = 8
     })
-    new("UICorner", {Parent = toggleBg, CornerRadius = UDim.new(1, 0)})
     
     local toggleCircle = new("Frame", {
         Parent = toggleBg,
@@ -789,7 +779,6 @@ function Library:CreateToggle(parent, label, configPath, callback, disableSave)
         BorderSizePixel = 0,
         ZIndex = 9
     })
-    new("UICorner", {Parent = toggleCircle, CornerRadius = UDim.new(1, 0)})
     
     local btn = new("TextButton", {Parent = toggleBg, Size = UDim2.new(1, 0, 1, 0), BackgroundTransparency = 1, Text = "", ZIndex = 10})
     
@@ -836,7 +825,6 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
         ZIndex = 7,
         Name = uniqueId or "Dropdown"
     })
-    new("UICorner", {Parent = dropdownFrame, CornerRadius = UDim.new(0, 6)})
     
     local header = new("TextButton", {
         Parent = dropdownFrame,
@@ -925,7 +913,6 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
         PlaceholderColor3 = colors.textDimmer,
         ZIndex = 11
     })
-    new("UICorner", {Parent = searchBox, CornerRadius = UDim.new(0, 4)})
     new("UIPadding", {Parent = searchBox, PaddingLeft = UDim.new(0, 6)})
     
     local listContainer = new("ScrollingFrame", {
@@ -965,7 +952,6 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
                     AutoButtonColor = false,
                     ZIndex = 11
                 })
-                new("UICorner", {Parent = itemBtn, CornerRadius = UDim.new(0, 5)})
                 
                 new("TextLabel", {
                     Parent = itemBtn,
@@ -1051,7 +1037,6 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
         ZIndex = 7,
         Name = uniqueId or "MultiDropdown"
     })
-    new("UICorner", {Parent = dropdownFrame, CornerRadius = UDim.new(0, 6)})
     
     local header = new("TextButton", {
         Parent = dropdownFrame,
@@ -1159,7 +1144,6 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
         PlaceholderColor3 = colors.textDimmer,
         ZIndex = 11
     })
-    new("UICorner", {Parent = searchBox, CornerRadius = UDim.new(0, 4)})
     new("UIPadding", {Parent = searchBox, PaddingLeft = UDim.new(0, 6)})
     
     local listContainer = new("ScrollingFrame", {
@@ -1199,7 +1183,6 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
                     AutoButtonColor = false,
                     ZIndex = 11
                 })
-                new("UICorner", {Parent = itemBtn, CornerRadius = UDim.new(0, 5)})
                 
                 local isSelected = selectedItems[itemName]
                 
@@ -1212,7 +1195,6 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
                     BorderSizePixel = 0,
                     ZIndex = 12
                 })
-                new("UICorner", {Parent = box, CornerRadius = UDim.new(0, 3)})
                 
                 if isSelected then
                     new("ImageLabel", {
@@ -1331,7 +1313,6 @@ function Library:CreateInput(parent, label, configPath, defaultValue, callback)
         BorderSizePixel = 0,
         ZIndex = 8
     })
-    new("UICorner", {Parent = inputBg, CornerRadius = UDim.new(0, 6)})
     
     local initialValue = Library.ConfigSystem.Get(configPath, defaultValue)
     local inputBox = new("TextBox", {
@@ -1376,7 +1357,6 @@ function Library:CreateButton(parent, label, callback)
         BorderSizePixel = 0,
         ZIndex = 8
     })
-    new("UICorner", {Parent = btnFrame, CornerRadius = UDim.new(0, 4)})
     
     local button = new("TextButton", {
         Parent = btnFrame,
@@ -1393,7 +1373,6 @@ function Library:CreateButton(parent, label, callback)
         AutoButtonColor = false,
         ZIndex = 9
     })
-    new("UICorner", {Parent = button, CornerRadius = UDim.new(0, 4)})
     
     button.MouseButton1Click:Connect(function() pcall(callback) end)
     return btnFrame
@@ -1411,7 +1390,6 @@ function Library:CreateTextBox(parent, label, placeholder, defaultValue, callbac
         BorderSizePixel = 0,
         ZIndex = 7
     })
-    new("UICorner", {Parent = container, CornerRadius = UDim.new(0, 8)})
     
     new("TextLabel", {
         Parent = container,
@@ -1443,7 +1421,6 @@ function Library:CreateTextBox(parent, label, placeholder, defaultValue, callbac
         ClearTextOnFocus = false,
         ZIndex = 8
     })
-    new("UICorner", {Parent = textBox, CornerRadius = UDim.new(0, 6)})
     new("UIPadding", {Parent = textBox, PaddingLeft = UDim.new(0, 8), PaddingRight = UDim.new(0, 8)})
     
     local lastSavedValue = defaultValue or ""
