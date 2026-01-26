@@ -255,6 +255,29 @@ function Library:CreateWindow(config)
     })
     new("UICorner", {Parent = self._win, CornerRadius = UDim.new(0, 8)})
     
+    -- Sidebar
+    self._sidebar = new("Frame", {
+        Parent = self._win,
+        Size = UDim2.new(0, sidebarWidth, 1, -45),
+        Position = UDim2.new(0, 0, 0, 45),
+        BackgroundColor3 = colors.bg2,
+        BackgroundTransparency = 0.7,
+        BorderSizePixel = 0,
+        ClipsDescendants = true,
+        ZIndex = 4
+    })
+    
+    -- Header
+    local scriptHeader = new("Frame", {
+        Parent = self._win,
+        Size = UDim2.new(1, 0, 0, 45),
+        Position = UDim2.new(0, 0, 0, 0),
+        BackgroundColor3 = colors.bg2,
+        BackgroundTransparency = 0.7,
+        BorderSizePixel = 0,
+        ZIndex = 5
+    })
+    
     -- Drag Handle
     local headerDragHandle = new("Frame", {
         Parent = scriptHeader,
@@ -360,7 +383,6 @@ function Library:CreateWindow(config)
         ClipsDescendants = true,
         ZIndex = 4
     })
-    new("UICorner", {Parent = self._contentBg, CornerRadius = UDim.new(0, 8)})
     
     -- Top Bar
     local topBar = new("Frame", {
@@ -372,7 +394,6 @@ function Library:CreateWindow(config)
         BorderSizePixel = 0,
         ZIndex = 5
     })
-    new("UICorner", {Parent = topBar, CornerRadius = UDim.new(0, 10)})
     
     self._pageTitle = new("TextLabel", {
         Parent = topBar,
