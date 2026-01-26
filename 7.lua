@@ -1,6 +1,6 @@
 -- ============================================
 -- LYNX GUI LIBRARY v3.0
--- Pure UI Library - Returns Library Objectwwww
+-- Pure UI Library - Returns Library Object
 -- ============================================
 
 local Library = {}
@@ -770,7 +770,7 @@ function Library:CreateToggle(parent, label, configPath, callback, disableSave)
         BackgroundTransparency = 1,
         TextColor3 = colors.text,
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 13,
         TextWrapped = true,
         ZIndex = 8
     })
@@ -871,7 +871,7 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
         Position = UDim2.new(0, imageId and 20 or 0, 0, 4),
         BackgroundTransparency = 1,
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 13,
         TextColor3 = colors.text,
         TextXAlignment = Enum.TextXAlignment.Left,
         ZIndex = 9
@@ -887,7 +887,7 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
         Position = UDim2.new(0, imageId and 26 or 6, 0, 20),
         BackgroundTransparency = 1,
         Font = Enum.Font.GothamBold,
-        TextSize = 8,
+        TextSize = 12,
         TextColor3 = colors.textDimmer,
         TextXAlignment = Enum.TextXAlignment.Left,
         ZIndex = 9
@@ -924,7 +924,7 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
         Text = "",
         PlaceholderText = "Search...",
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 12,
         TextColor3 = colors.text,
         PlaceholderColor3 = colors.textDimmer,
         ZIndex = 11
@@ -978,7 +978,7 @@ function Library:CreateDropdown(parent, title, imageId, items, configPath, onSel
                     Position = UDim2.new(0, 6, 0, 0),
                     BackgroundTransparency = 1,
                     Font = Enum.Font.GothamBold,
-                    TextSize = 8,
+                    TextSize = 12,
                     TextColor3 = selectedItem == itemName and colors.success or colors.textDim,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     TextTruncate = Enum.TextTruncate.AtEnd,
@@ -1086,7 +1086,7 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
         Position = UDim2.new(0, imageId and 20 or 0, 0, 4),
         BackgroundTransparency = 1,
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 13,
         TextColor3 = colors.text,
         TextXAlignment = Enum.TextXAlignment.Left,
         ZIndex = 9
@@ -1108,7 +1108,7 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
         Position = UDim2.new(0, imageId and 26 or 6, 0, 20),
         BackgroundTransparency = 1,
         Font = Enum.Font.GothamBold,
-        TextSize = 8,
+        TextSize = 12,
         TextColor3 = colors.textDimmer,
         TextXAlignment = Enum.TextXAlignment.Left,
         ZIndex = 9
@@ -1158,7 +1158,7 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
         Text = "",
         PlaceholderText = "Search...",
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 12,
         TextColor3 = colors.text,
         PlaceholderColor3 = colors.textDimmer,
         ZIndex = 11
@@ -1237,7 +1237,7 @@ function Library:CreateMultiDropdown(parent, title, imageId, items, configPath, 
                     Position = UDim2.new(0, 26, 0, 0),
                     BackgroundTransparency = 1,
                     Font = Enum.Font.GothamBold,
-                    TextSize = 8,
+                    TextSize = 12,
                     TextColor3 = isSelected and colors.text or colors.textDim,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     TextTruncate = Enum.TextTruncate.AtEnd,
@@ -1322,7 +1322,7 @@ function Library:CreateInput(parent, label, configPath, defaultValue, callback)
         TextColor3 = colors.text,
         TextXAlignment = Enum.TextXAlignment.Left,
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 13,
         ZIndex = 8
     })
     
@@ -1346,7 +1346,7 @@ function Library:CreateInput(parent, label, configPath, defaultValue, callback)
         Text = tostring(initialValue),
         PlaceholderText = "0.00",
         Font = Enum.Font.GothamBold,
-        TextSize = 9,
+        TextSize = 12,
         TextColor3 = colors.text,
         PlaceholderColor3 = colors.textDimmer,
         TextXAlignment = Enum.TextXAlignment.Center,
