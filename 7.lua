@@ -1,6 +1,6 @@
 -- ============================================
 -- LYNX GUI LIBRARY v3.0
--- Pure UI Library - Returns Library Object
+-- Pure UI Library - Returns Library Objectwwww
 -- ============================================
 
 local Library = {}
@@ -38,7 +38,7 @@ local colors = {
     secondary = Color3.fromRGB(147, 112, 219),
     accent = Color3.fromRGB(186, 85, 211),
     success = Color3.fromRGB(34, 197, 94),
-    bg1 = Color3.fromRGB(10, 10, 10),
+    bg1 = Color3.fromRGB(30, 30, 30),
     bg2 = Color3.fromRGB(18, 18, 18),
     bg3 = Color3.fromRGB(25, 25, 25),
     bg4 = Color3.fromRGB(35, 35, 35),
@@ -248,7 +248,7 @@ function Library:CreateWindow(config)
         Size = windowSize,
         Position = UDim2.new(0.5, -windowSize.X.Offset/2, 0.5, -windowSize.Y.Offset/2),
         BackgroundColor3 = colors.bg1,
-        BackgroundTransparency = 0.15,
+        BackgroundTransparency = 0.1,
         BorderSizePixel = 0,
         ClipsDescendants = false,
         ZIndex = 3
