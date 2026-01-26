@@ -255,18 +255,6 @@ function Library:CreateWindow(config)
     })
     new("UICorner", {Parent = self._win, CornerRadius = UDim.new(0, 8)})
     
-    -- Header
-    local scriptHeader = new("Frame", {
-        Parent = self._win,
-        Size = UDim2.new(1, 0, 0, 45),
-        Position = UDim2.new(0, 0, 0, 0),
-        BackgroundColor3 = colors.bg2,
-        BackgroundTransparency = 0.7,
-        BorderSizePixel = 0,
-        ZIndex = 5
-    })
-    new("UICorner", {Parent = scriptHeader, CornerRadius = UDim.new(0, 8)})
-    
     -- Drag Handle
     local headerDragHandle = new("Frame", {
         Parent = scriptHeader,
