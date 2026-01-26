@@ -677,8 +677,8 @@ function Library:CreateCategory(parent, title)
     local categoryFrame = new("Frame", {
         Parent = parent,
         Size = UDim2.new(1, 0, 0, 30),
-        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-        BackgroundTransparency = 0.999,
+        BackgroundColor3 = colors.bg3,
+        BackgroundTransparency = 0.935,
         BorderSizePixel = 0,
         AutomaticSize = Enum.AutomaticSize.Y,
         ZIndex = 6
@@ -694,93 +694,49 @@ function Library:CreateCategory(parent, title)
         ZIndex = 7
     })
     
-    -- Arrow container
-    local arrowContainer = new("Frame", {
-        Parent = header,
-        AnchorPoint = Vector2.new(1, 0.5),
-        Position = UDim2.new(1, -5, 0.5, 0),
-        Size = UDim2.new(0, 20, 0, 20),
-        BackgroundTransparency = 1,
-        ZIndex = 8
-    })
-    
-    -- Arrow as ImageLabel
-    local arrow = new("ImageLabel", {
-        Parent = arrowContainer,
-        AnchorPoint = Vector2.new(0.5, 0.5),
-        Position = UDim2.new(0.5, 0, 0.5, 0),
-        Size = UDim2.new(1, 6, 1, 6),
-        Image = "rbxassetid://16851841101",
-        Rotation = -90,
-        BackgroundTransparency = 1,
-        ZIndex = 9
-    })
-    
-    -- Title with AnchorPoint
     new("TextLabel", {
         Parent = header,
         Text = title,
-        AnchorPoint = Vector2.new(0, 0.5),
-        Position = UDim2.new(0, 10, 0.5, 0),
-        Size = UDim2.new(1, -50, 0, 13),
+        Size = UDim2.new(1, -50, 1, 0),
+        Position = UDim2.new(0, 8, 0, 0),
         BackgroundTransparency = 1,
         Font = Enum.Font.GothamBold,
         TextSize = 13,
-        TextColor3 = Color3.fromRGB(230, 230, 230),
+        TextColor3 = colors.text,
         TextXAlignment = Enum.TextXAlignment.Left,
-        TextYAlignment = Enum.TextYAlignment.Top,
         ZIndex = 8
     })
     
-    -- Separator line with gradient
-    local separator = new("Frame", {
-        Parent = categoryFrame,
-        AnchorPoint = Vector2.new(0.5, 0),
-        Position = UDim2.new(0.5, 0, 0, 33),
-        Size = UDim2.new(0, 0, 0, 2),
-        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-        BorderSizePixel = 0,
-        Visible = false,
-        ZIndex = 7
-    })
-    new("UICorner", {Parent = separator})
-    
-    new("UIGradient", {
-        Parent = separator,
-        Color = ColorSequence.new({
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(20, 20, 20)),
-            ColorSequenceKeypoint.new(0.5, colors.primary),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(20, 20, 20))
-        })
+    local arrow = new("TextLabel", {
+        Parent = header,
+        Text = "▼",
+        Size = UDim2.new(0, 20, 1, 0),
+        Position = UDim2.new(1, -24, 0, 0),
+        BackgroundTransparency = 1,
+        Font = Enum.Font.GothamBold,
+        TextSize = 10,
+        TextColor3 = colors.primary,
+        ZIndex = 8
     })
     
-    -- Content container with AnchorPoint
     local contentContainer = new("Frame", {
         Parent = categoryFrame,
-        AnchorPoint = Vector2.new(0.5, 0),
-        Position = UDim2.new(0.5, 0, 0, 38),
-        Size = UDim2.new(1, 0, 0, 100),
+        Size = UDim2.new(1, -16, 0, 0),
+        Position = UDim2.new(0, 8, 0, 38),
         BackgroundTransparency = 1,
         Visible = false,
         AutomaticSize = Enum.AutomaticSize.Y,
-        ClipsDescendants = true,
         ZIndex = 7
     })
-    new("UIListLayout", {Parent = contentContainer, Padding = UDim.new(0, 3), SortOrder = Enum.SortOrder.LayoutOrder})
+    new("UIListLayout", {Parent = contentContainer, Padding = UDim.new(0, 6)})
+    new("UIPadding", {Parent = contentContainer, PaddingBottom = UDim.new(0, 8)})
     
     local isOpen = false
     header.MouseButton1Click:Connect(function()
         isOpen = not isOpen
         contentContainer.Visible = isOpen
-        separator.Visible = isOpen
-        
-        if isOpen then
-            arrow.Rotation = 90
-            separator.Size = UDim2.new(1, 0, 0, 2)
-        else
-            arrow.Rotation = -90
-            separator.Size = UDim2.new(0, 0, 0, 2)
-        end
+        arrow.Rotation = isOpen and 180 or 0
+        categoryFrame.BackgroundTransparency = isOpen and 0.92 or 0.935
     end)
     
     return contentContainer
