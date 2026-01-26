@@ -255,19 +255,6 @@ function Library:CreateWindow(config)
     })
     new("UICorner", {Parent = self._win, CornerRadius = UDim.new(0, 8)})
     
-    -- Sidebar
-    self._sidebar = new("Frame", {
-        Parent = self._win,
-        Size = UDim2.new(0, sidebarWidth, 1, -45),
-        Position = UDim2.new(0, 0, 0, 45),
-        BackgroundColor3 = colors.bg2,
-        BackgroundTransparency = 0.7,
-        BorderSizePixel = 0,
-        ClipsDescendants = true,
-        ZIndex = 4
-    })
-    new("UICorner", {Parent = self._sidebar, CornerRadius = UDim.new(0, 8)})
-    
     -- Header
     local scriptHeader = new("Frame", {
         Parent = self._win,
