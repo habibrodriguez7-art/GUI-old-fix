@@ -1,5 +1,5 @@
 -- ============================================
--- LYNX GUI LIBRARY v3.0
+-- LYNX GUI LIBRARY v3.0aasa
 -- Pure UI Library - Returns Library Object
 -- ============================================
 
@@ -261,12 +261,11 @@ function Library:CreateWindow(config)
         Size = UDim2.new(0, sidebarWidth, 1, -45),
         Position = UDim2.new(0, 0, 0, 45),
         BackgroundColor3 = colors.bg2,
-        BackgroundTransparency = 0.7,
+        BackgroundTransparency = 0.999,
         BorderSizePixel = 0,
         ClipsDescendants = true,
         ZIndex = 4
     })
-    new("UICorner", {Parent = self._sidebar, CornerRadius = UDim.new(0, 8)})
     
     -- Header
     local scriptHeader = new("Frame", {
@@ -274,7 +273,7 @@ function Library:CreateWindow(config)
         Size = UDim2.new(1, 0, 0, 45),
         Position = UDim2.new(0, 0, 0, 0),
         BackgroundColor3 = colors.bg2,
-        BackgroundTransparency = 0.7,
+        BackgroundTransparency = 0.999,
         BorderSizePixel = 0,
         ZIndex = 5
     })
@@ -374,26 +373,13 @@ function Library:CreateWindow(config)
     })
     new("UIListLayout", {Parent = self._navContainer, Padding = UDim.new(0, 4), SortOrder = Enum.SortOrder.LayoutOrder})
     
-    -- Content Area
-    self._contentBg = new("Frame", {
-        Parent = self._win,
-        Size = UDim2.new(1, -(sidebarWidth + 10), 1, -52),
-        Position = UDim2.new(0, sidebarWidth + 5, 0, 47),
-        BackgroundColor3 = colors.bg2,
-        BackgroundTransparency = 0.8,
-        BorderSizePixel = 0,
-        ClipsDescendants = true,
-        ZIndex = 4
-    })
-    new("UICorner", {Parent = self._contentBg, CornerRadius = UDim.new(0, 8)})
-    
     -- Top Bar
     local topBar = new("Frame", {
-        Parent = self._contentBg,
-        Size = UDim2.new(1, -8, 0, 32),
-        Position = UDim2.new(0, 4, 0, 4),
+        Parent = self._win,
+        Size = UDim2.new(1, -(sidebarWidth + 14), 0, 32),
+        Position = UDim2.new(0, sidebarWidth + 9, 0, 51),
         BackgroundColor3 = colors.bg3,
-        BackgroundTransparency = 0.85,
+        BackgroundTransparency = 0.999,
         BorderSizePixel = 0,
         ZIndex = 5
     })
@@ -563,9 +549,9 @@ end
 -- ============================================
 function Library:CreatePage(name, title, imageId, order)
     local page = new("ScrollingFrame", {
-        Parent = self._contentBg,
-        Size = UDim2.new(1, -16, 1, -44),
-        Position = UDim2.new(0, 8, 0, 40),
+        Parent = self._win,
+        Size = UDim2.new(1, -(sidebarWidth + 18), 1, -91),
+        Position = UDim2.new(0, sidebarWidth + 9, 0, 87),
         BackgroundTransparency = 1,
         ScrollBarThickness = 3,
         ScrollBarImageColor3 = colors.primary,
