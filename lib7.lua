@@ -1,5 +1,5 @@
 -- ============================================
--- LYNX GUI LIBRARY v3.0
+-- LYNX GUI LIBRARY v3.0aAX
 -- Pure UI Library - Returns Library Object
 -- ============================================
 
@@ -272,7 +272,7 @@ function Library:CreateWindow(config)
         Size = windowSize,
         Position = UDim2.new(0.5, -windowSize.X.Offset/2, 0.5, -windowSize.Y.Offset/2),
         BackgroundColor3 = colors.bg1,
-        BackgroundTransparency = 4,
+        BackgroundTransparency = 0.5,
         BorderSizePixel = 0,
         ClipsDescendants = false,
         ZIndex = 3
